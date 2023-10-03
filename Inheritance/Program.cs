@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Inheritance
 {
@@ -6,19 +7,7 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
 
 
 
@@ -29,11 +18,64 @@ namespace Inheritance
              * Creatively display the class member values 
              */
 
+            Bird myBird = new Bird();
+
+            myBird.WingColor = "blue";
+
+            myBird.BeakLength = 5;
+
+            myBird.CanFly = true;
+
+            myBird.DoMigrate = true;
+
+
+            var myReptile = new Reptile();
+            myReptile.CanRegenTail = true;
+            myReptile.Habitat = "Desert";
+            myReptile.IsColdBlooded = true;
+            myReptile.IsScaly = true;
+
+            
+
+            var myAnimals = new Animal[] { myBird, myReptile };
+
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Alive: {animal.IsAlive}");
+                Console.WriteLine($"Age: {animal.Age} years old.");
+                Console.WriteLine($"It lives by {animal.LandSeaAir}");
+                Console.WriteLine($"It has {animal.LegCount} legs.");
+
+                Console.WriteLine($"Can Regenerate Tail: {myReptile.CanRegenTail}");
+                Console.WriteLine($" Habitat: {myReptile.Habitat}");
+                Console.WriteLine($"Is it cold blooded: {myReptile.IsColdBlooded}");
+                Console.WriteLine($"It's scaly: {true}");
+
+                Console.WriteLine($"Wing Color: {myBird.WingColor}");
+                Console.WriteLine($"Beak Length: {myBird.BeakLength}");
+                Console.WriteLine($"Can Fly: {myBird.CanFly}");
+                Console.WriteLine($"It migrates: {myBird.DoMigrate}");
+
+
+;
+
+            }
+
+
+
+
+
+
+
+
+
+
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
              *  
              * Creatively display the class member values 
              */
         }
-    }
+           
+}
 }
